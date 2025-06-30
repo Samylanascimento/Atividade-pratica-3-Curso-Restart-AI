@@ -1,14 +1,19 @@
+def verificador_ano_bissexto():
+  try:
+    ano = int(input("Digite o ano: "))
+    
+    if ano <= 0:
+      print("Digite um ano válido (maior que 0)!")
+      return
 
-def calcula_preco_total():
-  nome_produto = "Cadeira Infantil"
-  preco_unitario = 12.40
-  quantidade = 3
+    if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+      resultado = "bissexto"
+    else:
+      resultado = "não bissexto"
+    
+    print(f"O ano {ano} é {resultado}.")
+      
+  except ValueError:
+    print("Erro! Digite apenas números inteiros.")
 
-  preco_total = preco_unitario * quantidade
-
-  print(f"Produto: {nome_produto}")
-  print(f"Preço Unitário: R$ {preco_unitario:.2f}")
-  print(f"Quantidade: {quantidade}")
-  print(f"Preço Total: R$ {preco_total:.2f}")
-
-calcula_preco_total()
+verificador_ano_bissexto()
